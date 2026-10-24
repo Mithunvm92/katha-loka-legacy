@@ -1,0 +1,29 @@
+.venv/
+__pycache__/
+*.py[cod]
+.env
+output/comics/*
+output/previews/*
+!output/comics/.gitkeep
+!output/previews/.gitkeep
+
+# Python environments and caches
+.venv/
+__pycache__/
+*.py[cod]
+
+# Secrets
+.env
+.env.*
+
+# Generated output
+output/comics/*
+output/previews/*
+!output/comics/.gitkeep
+!output/previews/.gitkeep
+
+# Local backup files
+*.backup
+*.backup.*
+*.before-*
+*.empty-text-backup

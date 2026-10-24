@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#faf8f1">
+  <title>Katha Loka — Little stories, big worlds</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <script defer src="{{ url_for('static', filename='js/site.js') }}"></script>
+</head>
+<body>
+<header class="topbar" id="top">
+  <a class="wordmark" href="/" aria-label="Katha Loka home">
+    <span class="brand-mark" aria-hidden="true">✿</span>
+    <span>Katha Loka<small>ಕಥಾಲೋಕ</small></span>
+  </a>
+  <nav class="top-links" aria-label="Main navigation">
+    <a href="#library" data-en="Story library" data-kn="ಕಥೆಗಳ ಸಂಗ್ರಹ">Story library</a>
+    <a href="#new-this-week" data-en="New this week" data-kn="ಈ ವಾರದ ಹೊಸ ಕಥೆಗಳು">New this week</a>
+    <a href="#about" data-en="About" data-kn="ನಮ್ಮ ಬಗ್ಗೆ">About</a>
+    <label class="language-control">
+      <span class="sr-only" data-en="Website language" data-kn="ವೆಬ್‌ಸೈಟ್ ಭಾಷೆ">Website language</span>
+      <select id="siteLanguage" aria-label="Website language">
+        <option value="en">English</option>
+        <option value="kn">ಕನ್ನಡ</option>
+      </select>
+    </label>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow" data-en="A LITTLE PLACE FOR BIG IMAGINATIONS" data-kn="ಪುಟ್ಟ ಕಲ್ಪನೆಗಳಿಗೆ ಒಂದು ಸುಂದರ ತಾಣ">A LITTLE PLACE FOR BIG IMAGINATIONS</p>
+      <h1 data-en-html="Open a book.<br><em>Find a new world.</em>" data-kn-html="ಪುಸ್ತಕ ತೆರೆಯಿರಿ.<br><em>ಹೊಸ ಲೋಕ ಕಂಡುಕೊಳ್ಳಿ.</em>">Open a book.<br><em>Find a new world.</em></h1>
+      <p class="intro" data-en="Discover thoughtful tales, curious characters, and colourful worlds. A cosy place for young readers to enjoy one story at a time." data-kn="ಒಳ್ಳೆಯ ಕಥೆಗಳು, ಕುತೂಹಲಕಾರಿ ಪಾತ್ರಗಳು ಮತ್ತು ಬಣ್ಣಬಣ್ಣದ ಲೋಕಗಳನ್ನು ಕಂಡುಕೊಳ್ಳಿ. ಮಕ್ಕಳು ಒಂದೊಂದೇ ಕಥೆಯನ್ನು ಆನಂದಿಸಲು ಇದು ಸುಂದರ ತಾಣ.">Discover thoughtful tales, curious characters, and colourful worlds. A cosy place for young readers to enjoy one story at a time.</p>
+      <a class="primary-link" href="#library"><span data-en="Explore the library" data-kn="ಕಥೆಗಳ ಸಂಗ್ರಹ ನೋಡಿ">Explore the library</span><span aria-hidden="true">↓</span></a>
+      <div class="hero-points">
+        <span data-en="✦ For ages 6–8" data-kn="✦ ೬–೮ ವರ್ಷದ ಮಕ್ಕಳಿಗೆ">✦ For ages 6–8</span>
+        <span data-en="◉ English & ಕನ್ನಡ" data-kn="◉ ಇಂಗ್ಲಿಷ್ ಮತ್ತು ಕನ್ನಡ">◉ English & ಕನ್ನಡ</span>
+        <span data-en="♡ Stories to grow with" data-kn="♡ ಬೆಳೆಯಲು ನೆರವಾಗುವ ಕಥೆಗಳು">♡ Stories to grow with</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <img src="{{ url_for('static', filename='images/story-world-hero.jpg') }}" alt="A magical storybook landscape with books, a forest path, a bridge, a waterfall and woodland animals" data-alt-en="A magical storybook landscape with books, a forest path, a bridge, a waterfall and woodland animals" data-alt-kn="ಪುಸ್ತಕಗಳು, ಕಾಡಿನ ಹಾದಿ, ಸೇತುವೆ, ಜಲಪಾತ ಮತ್ತು ಕಾಡುಪ್ರಾಣಿಗಳಿರುವ ಕಲ್ಪನಾ ಲೋಕ">
+      <div class="art-caption"><strong data-en="Every story opens a door." data-kn="ಪ್ರತಿ ಕಥೆಯೂ ಹೊಸ ಬಾಗಿಲು ತೆರೆಯುತ್ತದೆ.">Every story opens a door.</strong><span data-en="Where will your imagination take you?" data-kn="ನಿಮ್ಮ ಕಲ್ಪನೆ ನಿಮ್ಮನ್ನು ಎಲ್ಲಿಗೆ ಕರೆದೊಯ್ಯುತ್ತದೆ?">Where will your imagination take you?</span></div>
+    </div>
+  </section>
+
+  <section class="library" id="library">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow" data-en="THE STORY LIBRARY" data-kn="ಕಥೆಗಳ ಸಂಗ್ರಹ">THE STORY LIBRARY</p>
+        <h2 data-en="Choose your next adventure." data-kn="ನಿಮ್ಮ ಮುಂದಿನ ಸಾಹಸವನ್ನು ಆರಿಸಿ.">Choose your next adventure.</h2>
+        <p class="section-intro" data-en="Pick a story, settle in, and let the pages take you somewhere new." data-kn="ಒಂದು ಕಥೆಯನ್ನು ಆರಿಸಿ, ಆರಾಮವಾಗಿ ಕುಳಿತು ಹೊಸ ಲೋಕಕ್ಕೆ ಪ್ರಯಾಣಿಸಿ.">Pick a story, settle in, and let the pages take you somewhere new.</p>
+      </div>
+      <span class="count" data-en="1 STORY AVAILABLE" data-kn="೧ ಕಥೆ ಲಭ್ಯ">1 STORY AVAILABLE</span>
+    </div>
+
+    <article class="story-card">
+      <a class="story-cover" href="/reader?language=en" id="coverLink" aria-label="Read The Tortoise and the Hare">
+        <img src="{{ url_for('static', filename='images/tortoise-hare-cover.jpg') }}" alt="Comic cover for The Tortoise and the Hare" data-alt-en="Comic cover for The Tortoise and the Hare" data-alt-kn="ಆಮೆ ಮತ್ತು ಮೊಲದ ಚಿತ್ರಕಥೆಯ ಮುಖಪುಟ">
+        <span class="cover-label" data-en="CLASSIC FABLE" data-kn="ನೀತಿಕಥೆ">CLASSIC FABLE</span>
+      </a>
+      <div class="story-info">
+        <div class="meta"><span data-en="AGES 6–8" data-kn="ವಯಸ್ಸು ೬–೮">AGES 6–8</span><span>·</span><span data-en="5 SCENES" data-kn="೫ ದೃಶ್ಯಗಳು">5 SCENES</span><span>·</span><span>EN / ಕನ್ನಡ</span></div>
+        <h3 data-en="The Tortoise and the Hare" data-kn="ಆಮೆ ಮತ್ತು ಮೊಲ">The Tortoise and the Hare</h3>
+        <p data-en="A speedy hare learns that steady steps can take you a long way. Read the illustrated comic and discover how the race ends." data-kn="ವೇಗದ ಮೊಲಕ್ಕೆ ನಿರಂತರ ಪ್ರಯತ್ನದ ಮಹತ್ವ ತಿಳಿಯುತ್ತದೆ. ಚಿತ್ರಕಥೆಯನ್ನು ಓದಿ, ಓಟದ ಅಂತ್ಯವನ್ನು ಕಂಡುಕೊಳ್ಳಿ.">A speedy hare learns that steady steps can take you a long way. Read the illustrated comic and discover how the race ends.</p>
+        <form class="read-actions" method="get" action="{{ url_for('reader') }}" id="readerForm">
+          <label for="readerLanguage" data-en="Read in" data-kn="ಓದುವ ಭಾಷೆ">Read in</label>
+          <select id="readerLanguage" name="language">
+            <option value="en">English</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+          </select>
+          <button type="submit" class="primary-button"><span data-en="Read story" data-kn="ಕಥೆ ಓದಿ">Read story</span><span aria-hidden="true">→</span></button>
+        </form>
+        <p class="moral"><span aria-hidden="true">🌱</span><span data-en="A little reminder: slow and steady can win the race." data-kn="ನೆನಪಿರಲಿ: ನಿಧಾನವಾಗಿ, ನಿರಂತರವಾಗಿ ಸಾಗಿದರೂ ಗೆಲ್ಲಬಹುದು.">A little reminder: slow and steady can win the race.</span></p>
+      </div>
+    </article>
+  </section>
+
+  <section class="weekly" id="new-this-week">
+    <div class="weekly-icon" aria-hidden="true">✧</div>
+    <div class="weekly-copy">
+      <p class="eyebrow" data-en="A GROWING COLLECTION" data-kn="ಬೆಳೆಯುತ್ತಿರುವ ಕಥೆಗಳ ಸಂಗ್ರಹ">A GROWING COLLECTION</p>
+      <h2 data-en="New stories, week by week." data-kn="ಪ್ರತಿ ವಾರ ಹೊಸ ಕಥೆಗಳು.">New stories, week by week.</h2>
+      <p data-en="We’ll keep adding new adventures here. Come back to discover fresh tales, folk stories, and new favourite characters." data-kn="ಇಲ್ಲಿ ಹೊಸ ಸಾಹಸಗಳನ್ನು ಸೇರಿಸುತ್ತೇವೆ. ಹೊಸ ಕಥೆಗಳು, ಜನಪದ ಕಥೆಗಳು ಮತ್ತು ಇಷ್ಟದ ಪಾತ್ರಗಳನ್ನು ಕಂಡುಕೊಳ್ಳಲು ಮತ್ತೆ ಬನ್ನಿ.">We’ll keep adding new adventures here. Come back to discover fresh tales, folk stories, and new favourite characters.</p>
+    </div>
+    <span class="weekly-tag" data-en="MORE STORIES SOON" data-kn="ಇನ್ನಷ್ಟು ಕಥೆಗಳು ಶೀಘ್ರದಲ್ಲೇ">MORE STORIES SOON</span>
+  </section>
+
+  <section class="about" id="about">
+    <p class="eyebrow" data-en="WELCOME, YOUNG READERS" data-kn="ಪುಟ್ಟ ಓದುಗರಿಗೆ ಸ್ವಾಗತ">WELCOME, YOUNG READERS</p>
+    <h2 data-en="A little reading can open a big world." data-kn="ಪುಟ್ಟ ಓದು ಹೊಸ ಲೋಕವನ್ನು ತೆರೆಯಬಹುದು.">A little reading can open a big world.</h2>
+    <p data-en="Katha Loka is a cosy home for children’s stories in English and Kannada. Explore at your own pace, meet new characters, and return whenever you’re ready for another adventure." data-kn="ಕಥಾಲೋಕವು ಇಂಗ್ಲಿಷ್ ಮತ್ತು ಕನ್ನಡ ಮಕ್ಕಳ ಕಥೆಗಳ ಸುಂದರ ತಾಣ. ನಿಮ್ಮದೇ ವೇಗದಲ್ಲಿ ಓದಿ, ಹೊಸ ಪಾತ್ರಗಳನ್ನು ಭೇಟಿ ಮಾಡಿ, ಮತ್ತೊಂದು ಸಾಹಸಕ್ಕೆ ಸಿದ್ಧರಾದಾಗ ಮತ್ತೆ ಬನ್ನಿ.">Katha Loka is a cosy home for children’s stories in English and Kannada. Explore at your own pace, meet new characters, and return whenever you’re ready for another adventure.</p>
+  </section>
+</main>
+
+<footer><span>✿ Katha Loka · ಕಥಾಲೋಕ</span><span data-en="Little stories, big worlds." data-kn="ಪುಟ್ಟ ಕಥೆಗಳು, ದೊಡ್ಡ ಲೋಕಗಳು.">Little stories, big worlds.</span><a href="#top" data-en="Back to top ↑" data-kn="ಮೇಲಕ್ಕೆ ↑">Back to top ↑</a></footer>
+</body>
+</html>

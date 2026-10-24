@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="{{ 'kn' if language == 'kn' else 'en' }}">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ 'ಆಮೆ ಮತ್ತು ಮೊಲ' if language == 'kn' else 'The Tortoise and the Hare' }} | Katha Loka</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <style>
+    .reader-shell {
+      max-width: 850px;
+      margin: 32px auto;
+      padding: 0 18px 48px;
+    }
+    .reader-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 24px;
+    }
+    .reader-top a { color: #355943; font-weight: 700; }
+    .reader-heading { color: #283d32; margin-bottom: 8px; }
+    .reader-subtitle { color: #63766a; margin-bottom: 24px; }
+    .comic-page {
+      display: block;
+      width: 100%;
+      max-width: 620px;
+      height: auto;
+      margin: 0 auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 28px rgba(48, 65, 47, .10);
+      background: #f5f1e7;
+    }
+    .reader-actions {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+    .reader-actions a, .reader-actions button {
+      padding: 12px 18px;
+      border-radius: 10px;
+      border: 0;
+      background: #355943;
+      color: white;
+      font: inherit;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .reader-actions .secondary { background: #e6ebdf; color: #355943; }
+    .reader-note { text-align: center; color: #63766a; margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <main class="reader-shell">
+    <nav class="reader-top">
+      <a href="{{ url_for('index') }}">← Back to stories</a>
+      <form method="GET" action="{{ url_for('reader') }}">
+        <label for="language">Read in </label>
+        <select id="language" name="language" onchange="this.form.submit()">
+          <option value="en" {% if language == 'en' %}selected{% endif %}>English</option>
+          <option value="kn" {% if language == 'kn' %}selected{% endif %}>ಕನ್ನಡ</option>
+        </select>
+      </form>
+    </nav>
+
+    <h1 class="reader-heading">
+      {{ 'ಆಮೆ ಮತ್ತು ಮೊಲ' if language == 'kn' else 'The Tortoise and the Hare' }}
+    </h1>
+    <p class="reader-subtitle">
+      {{ 'ಓದಿ, ಚಿತ್ರಗಳನ್ನು ಆನಂದಿಸಿ ಮತ್ತು ಕಥೆಯ ಜೊತೆ ಸಾಗಿರಿ.' if language == 'kn' else 'Take your time, enjoy the pictures, and follow the story.' }}
+    </p>
+
+    <img
+      class="comic-page"
+      src="{{ url_for('comic_file', filename=comic_filename) }}"
+      alt="{{ 'ಆಮೆ ಮತ್ತು ಮೊಲದ ಚಿತ್ರಕಥೆ' if language == 'kn' else 'The Tortoise and the Hare illustrated story' }}"
+    >
+
+    <div class="reader-actions">
+      <a class="secondary" href="{{ url_for('index') }}">Story shelf</a>
+      <button type="button" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑ Back to top</button>
+    </div>
+    <p class="reader-note">
+      {{ 'ಮುಂದಿನ ಕಥೆಗಾಗಿ ಮತ್ತೆ ಬನ್ನಿ!' if language == 'kn' else 'Come back for another little adventure!' }}
+    </p>
+  </main>
+</body>
+</html>
